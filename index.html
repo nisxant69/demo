@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="shortcut icon" href="assets/img/favico.png" type="image/x-icon" style="border-radius: 50%">
+  <title>Navy</title>
+</head>
+
+<body>
+
+  <div class="container">
+    <div class="cat">
+      <div class="head">
+        <div class="ear-container">
+          <div class="ear--left"></div>
+          <div class="ear--right"></div>
+        </div>
+        <div class="eye-container">
+          <div class="eye--left"></div>
+          <div class="eye--right"></div>
+        </div>
+        <div class="nose"></div>
+      </div>
+      <div class="body"></div>
+      <div class="hand--left"></div>
+      <div class="hand--right"></div>
+    </div>
+    <div class="lap lap--left">
+      <div class="lid"></div>
+      <div class="keyboard"></div>
+    </div>
+    <div class="lap lap--center">
+      <div class="lid"></div>
+    </div>
+    <div class="lap lap--right">
+      <div class="lid"></div>
+      <div class="keyboard"></div>
+    </div>
+  </div>
+  <div class="text">Site Under Construction</div>
+  <style>
+    html,
+    body {
+      overflow: hidden;
+    }
+
+    @media only screen and (max-width:767px) {
+      body .container {
+        scale: 0.75;
+      }
+    }
+
+    @import url("https://fonts.googleapis.com/css2?family=Bangers&display=swap");
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background: #20252c;
+      color: #ffffff;
+      font-family: "Bangers", cursive;
+      font-size: 4vw;
+      letter-spacing: 1px;
+    }
+
+    body .container {
+      position: relative;
+      width: 300px;
+      height: 300px;
+      transform: scale(0.8);
+    }
+
+    body .container .cat {
+      position: absolute;
+      top: 10%;
+      left: 50%;
+      width: 200px;
+      height: 100px;
+      transform: translateX(-50%);
+    }
+
+    body .container .cat .head {
+      position: absolute;
+      bottom: 0px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #ffffff;
+      width: 130px;
+      height: 100px;
+      border: 5px solid #13161a;
+      border-radius: 50%;
+    }
+
+    body .container .cat .head:after,
+    body .container .cat .head:before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform-origin: left center;
+      width: 70%;
+      height: 50px;
+      background: #13161a;
+      border-radius: 100%;
+      z-index: -1;
+    }
+
+    body .container .cat .head:before {
+      transform: translateY(-50%) rotate(45deg) rotateY(180deg) rotate(90deg);
+    }
+
+    body .container .cat .head:after {
+      transform: translateY(-50%) rotate(45deg);
+    }
+
+    body .container .cat .head .ear-container {
+      position: absolute;
+      top: 0px;
+      left: 50%;
+      transform: translateX(-50%);
+      height: 20px;
+      width: 80%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    body .container .cat .head .ear-container div[class^=ear] {
+      position: relative;
+      width: 0;
+      height: 0;
+      border-left: 20px solid transparent;
+      border-right: 20px solid transparent;
+      border-bottom: 40px solid #e6096c;
+    }
+
+    body .container .cat .head .ear-container div[class^=ear]:before,
+    body .container .cat .head .ear-container div[class^=ear]:after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 32px;
+      height: 32px;
+      background: #13161a;
+    }
+
+    body .container .cat .head .ear-container div[class^=ear]:before {
+      border-radius: 40px 0px;
+      transform: translate(-26px, 4px) rotate(-19deg);
+    }
+
+    body .container .cat .head .ear-container div[class^=ear]:after {
+      border-radius: 0px 40px;
+      transform: translate(-6px, 4px) rotate(19deg);
+    }
+
+    body .container .cat .head .ear-container .ear--left {
+      transform: translateY(-50%) rotate(-41deg) translate(-28px, -11px);
+    }
+
+    body .container .cat .head .ear-container .ear--right {
+      transform: translateY(-50%) rotate(41deg) translate(28px, -11px);
+    }
+
+    body .container .cat .head .eye-container {
+      position: absolute;
+      top: 25px;
+      left: 50%;
+      transform: translateX(-50%);
+      height: 20px;
+      width: 60%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    body .container .cat .head .eye-container div[class^=eye] {
+      position: relative;
+      height: 20px;
+      width: 20px;
+      background: #ffffff;
+      border-radius: 50%;
+    }
+
+    body .container .cat .head .eye-container div[class^=eye]:after {
+      content: "";
+      position: absolute;
+      top: 9px;
+      transform: translate(-50%);
+      width: 12px;
+      height: 12px;
+      background: #13161a;
+      border-radius: 50%;
+      -webkit-animation-name: eye;
+      animation-name: eye;
+      -webkit-animation-duration: 2s;
+      animation-duration: 2s;
+      -webkit-animation-iteration-count: infinite;
+      animation-iteration-count: infinite;
+      -webkit-animation-direction: alternate;
+      animation-direction: alternate;
+    }
+
+    body .container .cat .head .nose {
+      position: absolute;
+      top: 52%;
+      left: 50%;
+      width: 12px;
+      height: 9px;
+      transform: translate(-50%);
+      background: #13161a;
+      border-radius: 2px 2px 50% 50%;
+    }
+
+    body .container .cat .body {
+      position: absolute;
+      bottom: 0px;
+      left: 50%;
+      background: #ffffff;
+      width: 100px;
+      height: 100px;
+      transform: translate(-50%, 95px);
+      border-top-right-radius: 50%;
+      border-top-left-radius: 50%;
+      border: 5px solid #13161a;
+    }
+
+    body .container .cat div[class^=hand] {
+      position: absolute;
+      top: 100px;
+      left: 50%;
+      background: #ffffff;
+      border: 5px solid #13161a;
+      width: 30px;
+      height: 120px;
+      transform-origin: center top;
+      z-index: -1;
+      background: #13161a;
+      -webkit-animation-duration: 0.2s;
+      animation-duration: 0.2s;
+      -webkit-animation-iteration-count: infinite;
+      animation-iteration-count: infinite;
+    }
+
+    body .container .cat .hand--left {
+      -webkit-animation-name: move-left-hand;
+      animation-name: move-left-hand;
+      border-radius: 30px 0px 10px 30px;
+      -webkit-animation-delay: 0.1s;
+      animation-delay: 0.1s;
+      transform: translateX(-42px) rotate(80deg);
+    }
+
+    body .container .cat .hand--right {
+      -webkit-animation-name: move-right-hand;
+      animation-name: move-right-hand;
+      border-radius: 0px 30px 30px 5px;
+      transform: translateX(12px) rotate(-80deg);
+    }
+
+    body .container .lap {
+      position: absolute;
+      width: 120px;
+      height: 80px;
+    }
+
+    body .container .lap .lid {
+      width: 100%;
+      height: 100%;
+      background: #e6096c;
+      border: 5px solid #13161a;
+    }
+
+    body .container .lap .lid:before {
+      position: absolute;
+      content: "";
+      left: 50%;
+      top: 40%;
+      transform: translate(-50%);
+      width: 0px;
+      height: 0px;
+      border-right: 10px solid transparent;
+      border-top: 10px solid #e6db74;
+      border-left: 10px solid #e6db74;
+      border-bottom: 10px solid #e6db74;
+      border-radius: 10px;
+    }
+
+    body .container .lap .lid:after {
+      content: "";
+      box-sizing: border-box;
+      position: absolute;
+      width: 100%;
+      height: 20px;
+      background: #e6db74;
+      border: 5px solid #13161a;
+      bottom: 5px;
+      transform: translateY(100%);
+      left: 0px;
+    }
+
+    body .container .lap .keyboard {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: #63666b;
+      border: 5px solid #13161a;
+    }
+
+    body .container .lap.lap--center {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translateX(-50%);
+    }
+
+    body .container .lap.lap--left {
+      width: 100px;
+      left: 0;
+      top: 50%;
+      transform: translate(-90%, -60%) skew(0deg, 15deg);
+      z-index: -1;
+    }
+
+    body .container .lap.lap--left .keyboard {
+      border-width: 10px 10px 5px 0px;
+      transform-origin: center bottom;
+      transform: rotateX(70deg) skewX(-30deg) translate(25px, 42px);
+      z-index: -1;
+    }
+
+    body .container .lap.lap--right {
+      width: 100px;
+      right: 0;
+      top: 50%;
+      transform: translate(90%, -60%) skew(0deg, -15deg);
+      z-index: -1;
+    }
+
+    body .container .lap.lap--right .keyboard {
+      border-width: 10px 0px 5px 10px;
+      transform-origin: center bottom;
+      transform: rotateX(70deg) skewX(30deg) translate(-25px, 42px);
+      z-index: -1;
+    }
+
+    @-webkit-keyframes move-left-hand {
+      from {
+        transform: translateX(-42px) rotate(80deg);
+      }
+
+      to {
+        transform: translateX(-42px) rotate(60deg);
+      }
+    }
+
+    @keyframes move-left-hand {
+      from {
+        transform: translateX(-42px) rotate(80deg);
+      }
+
+      to {
+        transform: translateX(-42px) rotate(60deg);
+      }
+    }
+
+    @-webkit-keyframes move-right-hand {
+      from {
+        transform: translateX(12px) rotate(-80deg);
+      }
+
+      to {
+        transform: translateX(12px) rotate(-60deg);
+      }
+    }
+
+    @keyframes move-right-hand {
+      from {
+        transform: translateX(12px) rotate(-80deg);
+      }
+
+      to {
+        transform: translateX(12px) rotate(-60deg);
+      }
+    }
+
+    @-webkit-keyframes eye {
+      0% {
+        left: 5px;
+      }
+
+      50% {
+        left: 15px;
+      }
+
+      100% {
+        left: 5px;
+      }
+    }
+
+    @keyframes eye {
+      0% {
+        left: 5px;
+      }
+
+      50% {
+        left: 15px;
+      }
+
+      100% {
+        left: 5px;
+      }
+    }
+  </style>
+</body>
+
+</html>
